@@ -7,7 +7,18 @@ import ServicesSection from "../components/ServicesSection.astro";
 import Contact from "../components/Contact.astro";
 ---
 
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<link rel="preload" href="/fonts/JetBrains.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/Lexend.woff2" as="font" type="font/woff2" crossorigin>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hoş Geldin :3</title>
+<meta name="description" content="Data Scientist & Web Developer Portfolio" />
+</head>
+
 
 <div class="section1">
   <div class="navbar">
@@ -20,7 +31,7 @@ import Contact from "../components/Contact.astro";
 <div class="reveal" id="projects"><Project /></div>
 <div class="reveal" id="services"><ServicesSection /></div>
 <div class="reveal" id="contact"><Contact /></div>
-
+</html>
 <style is:global>
   .reveal {
   opacity: 0;
@@ -77,16 +88,20 @@ html {
 </style>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  }, {
-    threshold: 0.1 // Elemanın %10'u göründüğünde başlar
-  });
+  // Fonksiyonu asenkron başlatmak performansı artırabilir
+  const initObserver = () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target); // Eleman bir kere göründüyse izlemeyi bırak (Performans!)
+        }
+      });
+    }, { threshold: 0.15 });
 
-  // 'reveal' class'ına sahip tüm elemanları izle
-  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  };
+
+  // Sayfa yüklenince çalıştır
+  document.addEventListener('DOMContentLoaded', initObserver);
 </script>
