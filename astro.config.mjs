@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [icon()],
 compressHTML: true,
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'always',
   },
   vite: {
     build: {
