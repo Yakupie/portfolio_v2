@@ -13,7 +13,17 @@ const { title, text, imagePath } = Astro.props;
 
 <div class="project-card">
     <div class="image-container">
-        <Image src={imagePath} alt={title} class="project-image" />
+        <Image 
+    src={imagePath} 
+    alt={title} 
+    width={300}         
+    height={180}         
+    widths={[300, 600]}
+    sizes="(max-width: 768px) 296px, 300px" 
+    loading="lazy"   
+    decoding="async"     
+    class="project-image" 
+/>
     </div>
     <div class="content-area">
         <h3 class="project-title">{title}</h3>
