@@ -29,37 +29,37 @@ import Contact from "../components/Contact.astro";
       @font-face {
     font-family: 'JetBrains';
     src: url("/fonts/JetBrains.woff2") format("woff2");
-    font-weight: 500; font-style: normal; font-display: optional;
+    font-weight: 500; font-style: normal; font-display: swap;
     size-adjust: 95%;
   }
   @font-face {
     font-family: 'Geist';
     src: url("/fonts/Geist.woff2") format("woff2");
-    font-weight: 400; font-style: normal; font-display: optional;
+    font-weight: 400; font-style: normal; font-display: swap;
     size-adjust: 95%;
   }
   @font-face {
     font-family: 'Inter';
     src: url("/fonts/Inter.woff2") format("woff2");
-    font-weight: 500; font-style: normal; font-display: optional;
+    font-weight: 500; font-style: normal; font-display: swap;
     size-adjust: 95%;
   }
   @font-face {
     font-family: 'Lexend';
     src: url("/fonts/Lexend.woff2") format("woff2");
-    font-weight: 700; font-style: normal; font-display: optional;
+    font-weight: 700; font-style: normal; font-display: swap;
     size-adjust: 95%;
   }
   </style>
 </body>
 
 
-<div class="section1">
+<main class="section1">
   <div class="navbar">
     <Navbar />
   </div>
   <div id="hero"><Hero /></div>
-</div>
+</main>
 
 <div class="reveal" id="about"><About /></div>
 <div class="reveal" id="projects"><Project /></div>
@@ -97,8 +97,6 @@ html {
 </style>
 
 <script is:inline>
-  // DOMContentLoaded beklemek yerine doğrudan çalıştırabilirsin 
-  // çünkü script zaten body'nin sonunda yer alıyor.
   const initObserver = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -109,7 +107,7 @@ html {
       });
     }, { 
   threshold: 0,           
-  rootMargin: "0px 0px -50px 0px"  // negatif: ekrana yaklaşınca tetikle
+  rootMargin: "0px 0px -50px 0px"
 });
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
