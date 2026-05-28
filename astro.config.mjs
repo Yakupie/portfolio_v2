@@ -6,8 +6,23 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
   integrations: [icon()],
+compressHTML: true,
   build: {
-    // 4kb altındaki tüm CSS dosyalarını otomatik olarak HTML içine gömer
-    inlineStylesheets: 'always', 
+    inlineStylesheets: 'auto',
   },
+  vite: {
+    build: {
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // büyük bileşenleri ayır
+          }
+        }
+      }
+    },
+    ssr: {
+      noExternal: ['astro-icon']
+    }
+  }
 });

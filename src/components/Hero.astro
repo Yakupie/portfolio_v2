@@ -20,7 +20,16 @@ import mainImage from '../assets/main.webp';
       </div>
     </div>
     <div class="section1Right">
-      <Image src={mainImage} alt="Yakup Doğer" quality="mid" loading="eager" class="main-img" />
+      <Image 
+  src={mainImage} 
+  alt="Yakup Doğer" 
+  quality={85}
+  loading="eager"
+  fetchpriority="high"
+  widths={[400, 800, 1200]}
+  sizes="(max-width: 600px) 0px, (max-width: 1300px) 45vw, 40vw"
+  format="avif"
+/>
     </div>
   </div>
 </div>

@@ -82,6 +82,7 @@ import { Icon } from 'astro-icon/components';
     left: 0;
     z-index: 1;
     pointer-events: none;
+    will-change: transform;
   }
   .navbarWrapper ul li:first-child a {
     color: white;
@@ -92,11 +93,12 @@ import { Icon } from 'astro-icon/components';
   .navbarWrapper ul li:hover a {
     color: white !important;
   }
-  .navbarWrapper ul li:nth-child(1):hover ~ .slider { left: 0; }
-  .navbarWrapper ul li:nth-child(2):hover ~ .slider { left: 20%; }
-  .navbarWrapper ul li:nth-child(3):hover ~ .slider { left: 40%; }
-  .navbarWrapper ul li:nth-child(4):hover ~ .slider { left: 60%; }
-  .navbarWrapper ul li:nth-child(5):hover ~ .slider { left: 80%; }
+li:nth-child(1):hover ~ .slider { transform: translateX(0%); }
+li:nth-child(2):hover ~ .slider { transform: translateX(100%); }
+li:nth-child(3):hover ~ .slider { transform: translateX(200%); }
+li:nth-child(4):hover ~ .slider { transform: translateX(300%); }
+li:nth-child(5):hover ~ .slider { transform: translateX(400%); }
+
 
 
   @media screen and (max-width: 800px){
