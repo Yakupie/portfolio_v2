@@ -1,0 +1,262 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div class="section5">
+    <div class="section5Wrapper">
+        <div class="section5Left">
+            <div class="section5Tag">İletişim</div>
+            <div class="section5Header">Birlikte çalısalım.</div>
+            <div class="section5Text">Yeni projeler, fikirler veya iş birliği fırsatları için benimle iletişime geçebilirsiniz.</div>
+            <a href="mailto:yakup@example.com" class="contactMailBtn">
+                <Icon name="lucide:mail" />
+                yakupdgr44@gmail.com
+            </a>
+        </div>
+        <div class="section5Right">
+            <div class="socialCard">
+                <div class="socialCardHeader">Sosyal Medya</div>
+                <div class="socialLinks">
+                    <a href="https://github.com/Yakupie" target="_blank" class="socialLink">
+                        <Icon name="lucide:github" size="20" />
+                        <span>GitHub</span>
+                        <Icon name="lucide:arrow-up-right" size="14" class="socialArrow" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/yakupdoger/" target="_blank" class="socialLink">
+                        <Icon name="lucide:linkedin" size="20" />
+                        <span>LinkedIn</span>
+                        <Icon name="lucide:arrow-up-right" size="14" class="socialArrow" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footerWrapper">
+        <div class="footerLeft">
+            <div class="footerLogo">Yakup</div>
+            <div class="footerSub">Web Developer & Data Scientist — Malatya, Türkiye</div>
+        </div>
+        <div class="footerRight">
+            <div class="footerLinks">
+                <a href="#" class="footerLink">Ana Sayfa</a>
+                <a href="#" class="footerLink">Projeler</a>
+                <a href="#" class="footerLink">Hizmetler</a>
+                <a href="#" class="footerLink">İletişim</a>
+            </div>
+        </div>
+    </div>
+    <div class="footerBottom">
+        <div class="footerBottomText">© 2026 Tüm hakları saklıdır.</div>
+    </div>
+</footer>
+
+
+<style>
+
+    .section5 {
+        width: 100%;
+        min-height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5rem 0;
+    }
+    .section5Wrapper {
+        width: 80%;
+        display: flex;
+        gap: 4rem;
+        align-items: center;
+    }
+    .section5Left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    .section5Tag {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        background-color: #e8e8e8;
+        padding: 0.3rem 1rem;
+        border-radius: 5rem;
+        width: fit-content;
+        color: #555;
+    }
+    .section5Header {
+        font-family: 'Lexend', sans-serif;
+        font-size: 3.5rem;
+        line-height: 1.1;
+    }
+    .section5Text {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1rem;
+        color: #555;
+        max-width: 450px;
+        line-height: 1.6;
+    }
+    .contactMailBtn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        color: black;
+        text-decoration: none;
+        border: 0.1rem solid black;
+        border-radius: 0.5rem;
+        padding: 0.6rem 1.2rem;
+        width: fit-content;
+        transition: background-color 0.2s, color 0.2s;
+        margin-top: 0.5rem;
+    }
+    .contactMailBtn:hover {
+        background-color: black;
+        color: white;
+    }
+
+    .section5Right {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+    .socialCard {
+        box-shadow: 10px 10px 1px black;
+        border-radius: 1.2rem;
+        padding: 2rem;
+        width: 100%;
+        max-width: 380px;
+    }
+    .socialCardHeader {
+        font-family: 'Lexend', sans-serif;
+        font-size: 1rem;
+        color: black;
+        margin-bottom: 1.2rem;
+        letter-spacing: 0.05em;
+    }
+    .socialLinks {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        color: black;
+    }
+    .socialLink {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: black;
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        padding: 0.9rem 1rem;
+        border-radius: 0.7rem;
+        border: 0.05rem solid #222;
+        transition: background-color 0.2s, border-color 0.2s;
+    }
+    .socialLink:hover {
+        background-color: #1a1a1a;
+        border-color: #444;
+        color: white;
+    }
+    .socialArrow {
+        margin-left: auto;
+        color: #666;
+    }
+    .socialLink:hover .socialArrow {
+        color: #aaa;
+    }
+
+    .footer {
+        width: 100%;
+        border-top: 0.1rem solid #e8e8e8;
+        padding: 3rem 0 1.5rem;
+    }
+    .footerWrapper {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+    }
+    .footerLogo {
+        font-family: 'Lexend', sans-serif;
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+    .footerSub {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9rem;
+        color: #777;
+    }
+    .footerLinks {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+    .footerLink {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        color: #555;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .footerLink:hover {
+        color: black;
+    }
+    .footerBottom {
+        width: 80%;
+        margin: 0 auto;
+        border-top: 0.05rem solid #e8e8e8;
+        padding-top: 1.2rem;
+    }
+    .footerBottomText {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.85rem;
+        color: #aaa;
+    }
+
+    @media screen and (max-width: 768px) {
+        .section5Wrapper {
+            flex-direction: column;
+            width: 90%;
+            gap: 2rem;
+        }
+        .section5Header {
+            font-size: 2.5rem;
+        }
+        .section5Right {
+            width: 100%;
+        }
+        .socialCard {
+            max-width: 100%;
+        }
+        .footerWrapper {
+            width: 90%;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .footerLinks {
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .footerBottom {
+            width: 90%;
+        }
+        .section4Content {
+            flex-direction: column;
+        }
+    }
+    @media screen and (min-width: 769px) and (max-width: 1000px) {
+        .section4Content {
+            flex-direction: column;
+        }
+        .section5Wrapper {
+            flex-direction: column;
+        }
+    }
+</style>

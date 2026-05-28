@@ -1,0 +1,151 @@
+<section class="section2">
+  <div class="section2Wrapper">
+    <div class="section2Left">
+      <div class="leftHeader">About Me</div>
+      <div class="leftText">I am currently studying Statistics at Fırat University and have been actively involved in the web development field from a very young age, gaining experience by building real-world projects and modern web applications.
+
+My work focuses on creating clean, modern, and interactive user interfaces, while maintaining a strong emphasis on software engineering principles, mathematical thinking, and data-driven problem solving.
+
+I am continuously improving myself at the intersection of web technologies, mathematics, and design, with a long-term goal of becoming an AI Engineer and developing intelligent, scalable systems.</div>
+    </div>
+    <div class="section2Right">
+      <div class="codeWrapper">
+        <div class="codeHeader">
+          <div class="dots">
+            <div class="redDot"></div>
+            <div class="yellowDot"></div>
+            <div class="greenDot"></div>
+          </div>
+          <div class="headerText">overview.ts</div>
+        </div>
+        <div class="codeArea">
+          <div class="line"><span class="purple">export const</span> <span class="blue">developer</span> = &#123;</div>
+          <div class="line indent"><span class="cyan">name</span>: <span class="orange">'Yakup'</span>,</div>
+          <div class="line indent"><span class="cyan">age</span>: <span class="orange">18</span>,</div>
+          <div class="line indent"><span class="cyan">title</span>: <span class="orange">'Web Developer - Data Scientist'</span></div>
+          <div class="line">&#125;;</div>
+          <div class="line"></div>
+          <div class="line"><span class="purple">export const</span> <span class="blue">overview</span> = &#123;</div>
+          <div class="line indent"><span class="cyan">education</span>: &#123;</div>
+          <div class="line indent2"><span class="cyan">school</span>: <span class="orange">'Fırat Üniversitesi'</span>,</div>
+          <div class="line indent2"><span class="cyan">department</span>: <span class="orange">'Statistics'</span></div>
+          <div class="line indent">&#125;,</div>
+          <div class="line"></div>
+          <div class="line indent"><span class="cyan">stack</span>: <span class="orange">'HTML, CSS, JavaScript, Svelte, Astro, Qwik, Node.js, C, Python, MySQL'</span></div>
+          <div class="line">&#125;;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section2 {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .section2Wrapper {
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .section2Left {
+    width: 40%;
+    height: 100%;
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .section2Right {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .codeWrapper {
+    background-color: black;
+    width: 80%;
+    height: 80%;
+    border-radius: 2rem;
+  }
+  .codeHeader {
+    width: 100%;
+    height: 10%;
+    background-color: #F0F0F0;
+    border-radius: 1rem 1rem 0 0;
+    display: flex;
+    align-items: center;
+  }
+  .codeArea {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2rem;
+    font-family: 'JetBrains', sans-serif;
+    font-size: 1.1rem;
+  }
+  .dots { margin-left: 2rem; display: flex; gap: 0.5rem; }
+  .redDot    { width: 1rem; height: 1rem; border-radius: 10rem; background-color: #FF5F56; }
+  .yellowDot { width: 1rem; height: 1rem; border-radius: 10rem; background-color: #FFBD2E; }
+  .greenDot  { width: 1rem; height: 1rem; border-radius: 10rem; background-color: #27C93F; }
+  .headerText { margin-left: 2rem; font-size: 0.9rem; font-family: 'Lexend', sans-serif; }
+  .line   { display: block; color: white; }
+  .indent  { margin-left: 1.5rem; color: white; }
+  .indent2 { margin-left: 3rem; color: white; }
+  .purple { color: #C792EA; }
+  .blue   { color: #82aaff; }
+  .cyan   { color: #7fdbca; }
+  .orange { color: #ecc48d; }
+  .leftHeader {
+    font-family: 'Lexend', sans-serif;
+    font-size: 4rem;
+    border-bottom: 0.1rem solid black;
+  }
+  .leftText {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  /* Responsive */
+  @media screen and (max-width: 600px) {
+    .section2 { height: 110vh; }
+    .section2Wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 95%;
+    }
+    .section2Left { width: 100%; height: 50%; }
+    .section2Right { width: 100%; height: 50%; }
+    .codeWrapper { width: 100%; height: 90%; }
+    .codeArea { font-size: 0.9rem; }
+    .leftText { font-size: 1rem; }
+  }
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    .section2 { height: 90vh; }
+    .section2Wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .section2Left { width: 100%; height: 50%; }
+    .section2Right { width: 100%; height: 50%; }
+    .codeWrapper { width: 90%; height: 90%; }
+    .codeArea { font-size: 1rem; }
+  }
+  @media screen and (min-width: 1000px) and (max-width: 1300px) {
+    .section2Wrapper { width: 95%; }
+    .codeWrapper { width: 90%; }
+  }
+</style>

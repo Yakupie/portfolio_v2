@@ -1,0 +1,117 @@
+---
+import Project from "./Project.astro";
+import projectImage1 from "../assets/web1.webp";
+import projectImage2 from "../assets/web2.webp";
+import projectImage3 from "../assets/web3.webp";
+import projectImage4 from "../assets/web4.webp";
+import projectImage5 from "../assets/web5.webp";
+import projectImage6 from "../assets/web6.webp";
+import projectImage7 from "../assets/web7.webp";
+import projectImage8 from "../assets/web8.webp";
+---
+
+<section class="section3">
+  <div class="section3Wrapper">
+    <div class="section3Header">
+      <div class="section3HeaderArea">
+        <div class="section3HeaderText">Projeler</div>
+        <div class="section3HeaderTextText">Tamamlanan çalışmalar</div>
+      </div>
+      <div class="section3Buttons">
+        <button id="left">&lt;</button>
+        <button id="right">&gt;</button>
+      </div>
+    </div>
+    <div class="section3Area">
+      <Project title="Anime İzleme Platformu"            text="Geniş anime kütüphanesine sahip, kullanıcı dostu arayüzü ile kesintisiz ve yüksek çözünürlüklü yayın deneyimi sunan modern bir streaming platformu."                                                                                      imagePath={projectImage1}/>
+      <Project title="Range Package Manager"             text="Java tabanlı geliştirilen framework'ün teknik özelliklerini, dökümantasyonunu ve performans avantajlarını etkileyici bir görsel sunumla sergileyen kurumsal web projesi."                                                                  imagePath={projectImage2}/>
+      <Project title="BIST Temel Analiz"                 text="Python Selenium ile çekilen verileri işleyen, yatırımcılar için borsa İstanbul hisselerine yönelik kapsamlı temel analiz ve veri görselleştirme aracı."                                                                                 imagePath={projectImage3}/>
+      <Project title="Canlı Zamanlı Kripto"              text="Canlı API entegrasyonu sayesinde kripto para piyasalarını anlık verilerle takip eden, kullanıcıya güncel fiyat ve değişim analizleri sunan platform."                                                                                    imagePath={projectImage4}/>
+      <Project title="Roleplay Server Website"           text="Oyuncu toplulukları için geliştirilmiş; sunucu istatistiklerini, market sistemini ve oyuncu bilgilerini entegre bir şekilde sunan dinamik yönetim paneli."                                                                               imagePath={projectImage5}/>
+      <Project title="Kisisellestirilmis Dizi Öneri Platformu" text="Kullanıcı tercihlerine göre özelleşen algoritmasıyla, izleme geçmişine dayalı nokta atışı dizi önerileri sunan interaktif ve modern bir web sitesi."                                                                              imagePath={projectImage6}/>
+      <Project title="Türk Manga Yayın Platformu"        text="Yerli manga sanatçılarını ve eserlerini destekleyen, özgün Türkçe içeriklerin dijital ortamda okunmasına olanak sağlayan yenilikçi bir yayın mecrası."                                                                                  imagePath={projectImage7}/>
+      <Project title="Online Türkçe Anime Portalı"       text="Türkçe altyazı ve dublaj seçenekleriyle geniş bir kitleye hitap eden, yüksek performanslı ve topluluk odaklı online izleme deneyimi."                                                                                                   imagePath={projectImage8}/>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section3 {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .section3Wrapper { width: 80%; height: 90%; }
+  .section3Header {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .section3HeaderArea { display: flex; flex-direction: column; }
+  .section3HeaderText { font-family: 'Lexend', sans-serif; font-size: 4rem; }
+  .section3HeaderTextText { font-family: 'Inter', sans-serif; font-size: 1rem; }
+  #left, #right {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5rem;
+    border: 0.1rem solid black;
+    background-color: white;
+    color: black;
+    font-family: 'Lexend', sans-serif;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+  }
+  .section3Buttons { display: flex; gap: 1rem; }
+  .section3Area {
+    height: 80%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: black #f1f1f1;
+    padding-bottom: 20px;
+  }
+  .section3Area::-webkit-scrollbar { height: 5px; display: block; }
+  .section3Area::-webkit-scrollbar-track { background-color: transparent; }
+  .section3Area::-webkit-scrollbar-thumb { background: #000; border-radius: 10px; }
+  .section3Area::-webkit-scrollbar-thumb:hover { background: #333; }
+
+  @media screen and (max-width: 600px) {
+    .section3 { height: 80vh; }
+    #left, #right { width: 2rem; height: 2rem; font-size: 0.7rem; }
+    .section3Buttons {
+      height: 100%;
+      display: flex;
+      justify-content: end;
+      align-items: end;
+    }
+  }
+</style>
+
+<script>
+  const leftBtn = document.getElementById('left');
+  const rightBtn = document.getElementById('right');
+  const scrollArea = document.querySelector('.section3Area');
+
+  if (leftBtn && rightBtn && scrollArea) {
+    rightBtn.addEventListener('click', () => {
+      scrollArea.scrollBy({ left: 350, behavior: 'smooth' });
+    });
+    leftBtn.addEventListener('click', () => {
+      scrollArea.scrollBy({ left: -350, behavior: 'smooth' });
+    });
+  }
+</script>

@@ -1,0 +1,92 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Project from "../components/Projects.astro";
+import ServicesSection from "../components/ServicesSection.astro";
+import Contact from "../components/Contact.astro";
+---
+
+<meta charset="utf-8">
+
+<div class="section1">
+  <div class="navbar">
+    <Navbar />
+  </div>
+  <div id="hero" class="reveal"><Hero /></div>
+</div>
+
+<div class="reveal" id="about"><About /></div>
+<div class="reveal" id="projects"><Project /></div>
+<div class="reveal" id="services"><ServicesSection /></div>
+<div class="reveal" id="contact"><Contact /></div>
+
+<style is:global>
+  .reveal {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 1s ease-out;
+}
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #f1f1f1; }
+  ::-webkit-scrollbar-thumb { background: #000; border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: #333; }
+
+  @font-face {
+    font-family: 'JetBrains';
+    src: url("/fonts/JetBrains.woff2") format("woff2");
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Geist';
+    src: url("/fonts/Geist.woff2") format("woff2");
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: url("/fonts/Inter.woff2") format("woff2");
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Lexend';
+    src: url("/fonts/Lexend.woff2") format("woff2");
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+html {
+  scroll-behavior: smooth;
+}
+
+  .section1 {
+    width: 100%;
+    height: 100vh;
+  }
+  .navbar {
+    width: 100%;
+    height: 10vh;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .navbar { display: none; }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, {
+    threshold: 0.1 // Elemanın %10'u göründüğünde başlar
+  });
+
+  // 'reveal' class'ına sahip tüm elemanları izle
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
