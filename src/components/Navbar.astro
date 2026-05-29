@@ -4,14 +4,14 @@ import { Icon } from 'astro-icon/components';
 
 <div class="navbar">
   <div class="navbarWrapper">
-<ul>
-  <li><a href="#home"><Icon name="lucide:home" />Home</a></li>
-  <li><a href="#about"><Icon name="lucide:contact-2" />About</a></li>
-  <li><a href="#projects"><Icon name="lucide:folder-open" />Projects</a></li>
-  <li><a href="#services"><Icon name="lucide:code-2" />Services</a></li>
-  <li><a href="#contact"><Icon name="lucide:mail" />Contact</a></li>
-  <span class="slider"></span>
-</ul>
+    <ul>
+      <li><a href="#home"><Icon name="lucide:home" />Home</a></li>
+      <li><a href="#about"><Icon name="lucide:contact-2" />About</a></li>
+      <li><a href="#projects"><Icon name="lucide:folder-open" />Projects</a></li>
+      <li><a href="#services"><Icon name="lucide:code-2" />Services</a></li>
+      <li><a href="#contact"><Icon name="lucide:mail" />Contact</a></li>
+    </ul>
+    <span class="slider"></span>
   </div>
 </div>
 
@@ -75,15 +75,16 @@ import { Icon } from 'astro-icon/components';
     position: absolute;
     height: 80%;
     top: 10%;
-    width: 20%; 
+    width: calc(20% - 4px);
     background-color: black;
     border-radius: 5rem;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    left: 0;
+    left: 10px;
     z-index: 1;
     pointer-events: none;
     will-change: transform;
   }
+
   .navbarWrapper ul li:first-child a {
     color: white;
   }
@@ -93,22 +94,21 @@ import { Icon } from 'astro-icon/components';
   .navbarWrapper ul li:hover a {
     color: white !important;
   }
-li:nth-child(1):hover ~ .slider { transform: translateX(0%); }
-li:nth-child(2):hover ~ .slider { transform: translateX(100%); }
-li:nth-child(3):hover ~ .slider { transform: translateX(200%); }
-li:nth-child(4):hover ~ .slider { transform: translateX(300%); }
-li:nth-child(5):hover ~ .slider { transform: translateX(400%); }
 
+  ul li:nth-child(1):hover ~ .slider, 
+  ul:has(li:nth-child(1):hover) + .slider { transform: translateX(0%); }
 
+  ul:has(li:nth-child(2):hover) + .slider { transform: translateX(100%); }
+  
+  ul:has(li:nth-child(3):hover) + .slider { transform: translateX(200%); }
+  
+  ul:has(li:nth-child(4):hover) + .slider { transform: translateX(300%); }
+  
+  ul:has(li:nth-child(5):hover) + .slider { transform: translateX(400%); }
 
   @media screen and (max-width: 800px){
     .navbarWrapper{
         display: none;
-    }
-    .mobileMenuWrapper{
-        background-color: aqua;
-        width: 100%;
-        height: 100%;
     }
   }
 </style>
