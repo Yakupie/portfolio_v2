@@ -9,7 +9,7 @@ import mainImage from '../assets/main.webp';
     <div class="section1Left">
       <div class="section1LeftTop">
         <div class="work">Available For Work</div>
-        <div class="header">Hi, I'm Yakup</div>
+        <div class="header">Hi, i'm Yakup</div>
         <div class="title">Web Developer - Data Scientist</div>
         <div class="text">Passionate Web Developer with 3+ years of expertise in creating responsive and functional interfaces. My academic journey in Statistics fuels my deep interest in Mathematics and Data Science, allowing me to transform complex data into beautiful, actionable web experiences.</div>
         <div class="location"><Icon name="lucide:map-pin" />Malatya</div>
@@ -20,15 +20,16 @@ import mainImage from '../assets/main.webp';
       </div>
     </div>
     <div class="section1Right">
-      <Image 
+<Image 
   src={mainImage} 
   alt="Yakup Doğer" 
-  quality={85}
+  quality={30}
   loading="eager"
   fetchpriority="high"
-  widths={[400, 800, 1200]}
-  sizes="(max-width: 600px) 0px, (max-width: 1300px) 45vw, 40vw"
+  widths={[314, 628]}
+  sizes="(max-width: 600px) 314px, 314px"
   format="avif"
+  class="main-img" 
 />
     </div>
   </div>
@@ -49,7 +50,7 @@ import mainImage from '../assets/main.webp';
   }
   .section1Left { width: 60%; height: 100%; }
   .section1Right { width: 40%; height: 100%; display: flex; align-items: center; }
-  .main-img { width: 70%; height: 70%; }
+  .main-img { width: 70%; height: 70%; height: auto;}
   .section1LeftTop {
     height: 80%;
     width: 80%;

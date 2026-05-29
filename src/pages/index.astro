@@ -10,61 +10,37 @@ import Contact from "../components/Contact.astro";
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-
-<link rel="preload" href="/fonts/JetBrains.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/Lexend.woff2" as="font" type="font/woff2" crossorigin>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hoş Geldin :3</title>
-<meta name="description" content="Data Scientist & Web Developer Portfolio" />
-
-</head>
-<body>
+  <link rel="preload" href="/fonts/JetBrains.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Lexend.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Yakup - Full-Stack Web Developer ve Veri Bilimi meraklısı. Modern web teknolojileri ve istatistiksel analiz projelerimi inceleyin.">
+  <title>Hoş Geldin :3</title>
+  
   <style is:inline>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    .section1 { width: 100%; height: 100vh; background: #fff; }
-    .navbar { width: 100%; height: 10vh; }
-    #hero { min-height: 90vh; }
-      @font-face {
-    font-family: 'JetBrains';
-    src: url("/fonts/JetBrains.woff2") format("woff2");
-    font-weight: 500; font-style: normal; font-display: swap;
-    size-adjust: 95%;
-  }
-  @font-face {
-    font-family: 'Geist';
-    src: url("/fonts/Geist.woff2") format("woff2");
-    font-weight: 400; font-style: normal; font-display: swap;
-    size-adjust: 95%;
-  }
-  @font-face {
-    font-family: 'Inter';
-    src: url("/fonts/Inter.woff2") format("woff2");
-    font-weight: 500; font-style: normal; font-display: swap;
-    size-adjust: 95%;
-  }
-  @font-face {
-    font-family: 'Lexend';
-    src: url("/fonts/Lexend.woff2") format("woff2");
-    font-weight: 700; font-style: normal; font-display: swap;
-    size-adjust: 95%;
-  }
+    .section1 { width: 100%; height: 100vh; background: #fff; display: block; }
+    
+    @font-face {font-family: 'JetBrains';src: url("/fonts/JetBrains.woff2") format("woff2");font-weight: 500; font-style: normal; font-display: swap; size-adjust: 95%;}
+    @font-face { font-family: 'Lexend'; src: url("/fonts/Lexend.woff2") format("woff2"); font-display: swap; }
+    @font-face { font-family: 'Inter'; src: url("/fonts/Inter.woff2") format("woff2"); font-display: swap; }
   </style>
-</body>
+</head>
 
+<body>
+  <main class="section1">
+    <div class="navbar"><Navbar /></div>
+    <div id="hero"><Hero /></div>
+  </main>
 
-<main class="section1">
-  <div class="navbar">
-    <Navbar />
-  </div>
-  <div id="hero"><Hero /></div>
-</main>
-
-<div class="reveal" id="about"><About /></div>
-<div class="reveal" id="projects"><Project /></div>
+  <div class="reveal" id="about"><About /></div>
+  <div class="reveal" id="projects"><Project /></div>
+  
 <div class="reveal" id="services"><ServicesSection /></div>
 <div class="reveal" id="contact"><Contact /></div>
+</body>
 </html>
 
 
