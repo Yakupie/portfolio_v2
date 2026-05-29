@@ -73,7 +73,9 @@ import projectImage8 from "../assets/web8.webp";
   .section3Area {
     height: 80%;
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
     overflow-y: hidden;
     display: flex;
     align-items: center;
@@ -84,6 +86,10 @@ import projectImage8 from "../assets/web8.webp";
     scrollbar-color: black #f1f1f1;
     padding-bottom: 20px;
   }
+  .section3Area > * {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+  }
   .section3Area::-webkit-scrollbar { height: 5px; display: block; }
   .section3Area::-webkit-scrollbar-track { background-color: transparent; }
   .section3Area::-webkit-scrollbar-thumb { background: #000; border-radius: 10px; }
@@ -91,13 +97,45 @@ import projectImage8 from "../assets/web8.webp";
 
   @media screen and (max-width: 600px) {
     .section3 { height: 80vh; }
-    #left, #right { width: 2rem; height: 2rem; font-size: 0.7rem; }
-    .section3Buttons {
-      height: 100%;
-      display: flex;
-      justify-content: end;
-      align-items: end;
+    #left, #right { width: 1.5rem; height: 1.5rem; font-size: 0.7rem; }
+    .section3Area {
+      padding-left: 10%;
+      padding-right: 10%;
+      gap: 1rem;
     }
+    .section3 { 
+    height: auto;
+    padding: 2rem 0;
+  }
+  .section3Wrapper { 
+    width: 90%;
+    height: auto; 
+  }
+  .section3Buttons {
+    display: none; 
+  }
+    
+    .section3Area::-webkit-scrollbar {
+      display: none;
+    }
+.section3Area {
+    flex-direction: column;
+    overflow-x: visible;
+    overflow-y: visible;
+    height: auto;
+    gap: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+    scroll-snap-type: none;
+  }
+  .section3Area > * {
+    width: 100%;
+    scroll-snap-align: none;
+  }
+
+  .section3HeaderText { 
+    font-size: 2.5rem; 
+  }
   }
 </style>
 
